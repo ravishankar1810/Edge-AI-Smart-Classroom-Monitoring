@@ -1,0 +1,1012 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #08090f;
+  color: white;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.dashboard-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: #315ddf;
+  top: -150px;
+  right: -100px;
+}
+
+.orb-2 {
+  width: 350px;
+  height: 350px;
+  background: #8b35d6;
+  bottom: -150px;
+  left: -100px;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: #1c79c9;
+  top: 40%;
+  left: 40%;
+}
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+  position: relative;
+  z-index: 1;
+
+  width: 90%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 45px 0 70px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 35px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  font-size: 42px;
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #4d9aff,
+    #8d78ff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-top: 8px;
+
+  color: #8791a8;
+
+  font-size: 16px;
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background: #29c56d;
+
+  box-shadow:
+    0 0 10px #29c56d;
+}
+
+.status-dot.offline {
+  background: #e74747;
+}
+
+.status-text {
+  color: #aab3c6;
+}
+
+.update-time {
+  color: #677086;
+
+  padding-left: 10px;
+
+  border-left: 1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   COMMAND CARD
+   ========================================================= */
+
+.command-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 35px;
+
+  margin-bottom: 28px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(28, 28, 36, 0.95),
+      rgba(19, 20, 27, 0.95)
+    );
+}
+
+.glow-effect {
+  position: absolute;
+
+  right: -100px;
+  top: -100px;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #4575d9;
+
+  filter: blur(120px);
+
+  opacity: 0.15;
+}
+
+.card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.label {
+  color: #8a94aa;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  font-size: 13px;
+}
+
+.badge {
+  padding: 5px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.badge-active {
+  background: rgba(27, 190, 105, 0.16);
+
+  color: #38db87;
+}
+
+.badge-idle {
+  background: rgba(220, 65, 65, 0.16);
+
+  color: #ff6969;
+}
+
+.badge-standby {
+  background: rgba(255, 190, 55, 0.15);
+
+  color: #ffc14e;
+}
+
+.command-text {
+  position: relative;
+
+  margin: 15px 0 5px;
+
+  font-size: 34px;
+
+  font-weight: 800;
+}
+
+.command-reason {
+  color: #9ca5b8;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   SENSOR GRID
+   ========================================================= */
+
+.sensor-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.sensor-card {
+  padding: 25px;
+
+  border-radius: 20px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(22, 22, 29, 0.85);
+}
+
+.sensor-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.sensor-title {
+  color: #7e899f;
+
+  font-size: 14px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.sensor-value {
+  font-size: 27px;
+
+  font-weight: 800;
+}
+
+.temp-value.cold {
+  color: #6eb9ff;
+}
+
+.temp-value.mild {
+  color: #65d98c;
+}
+
+.temp-value.warm {
+  color: #ffc14e;
+}
+
+.temp-value.hot {
+  color: #ff4c4c;
+}
+
+/* =========================================================
+   TEMPERATURE
+   ========================================================= */
+
+.temp-gauge {
+  height: 8px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #282b34;
+}
+
+.temp-gauge .fill {
+  height: 100%;
+
+  transition: width 0.5s;
+}
+
+.temp-gauge .fill.cold {
+  background: #58a9ff;
+}
+
+.temp-gauge .fill.mild {
+  background: #49d481;
+}
+
+.temp-gauge .fill.warm {
+  background: #ffc34d;
+}
+
+.temp-gauge .fill.hot {
+  background: #ff4747;
+}
+
+.temp-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  color: #667085;
+
+  font-size: 12px;
+}
+
+.temp-status {
+  color: #a7afbf;
+}
+
+/* =========================================================
+   HUMIDITY
+   ========================================================= */
+
+.humidity-display {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  min-height: 75px;
+}
+
+.humidity-circle {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(55, 150, 255, 0.12);
+
+  font-size: 28px;
+}
+
+.humidity-number {
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+.humidity-label {
+  color: #737e93;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   LIGHT
+   ========================================================= */
+
+.light-display {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 75px;
+}
+
+.light-icon {
+  font-size: 38px;
+}
+
+.light-info {
+  flex: 1;
+
+  color: #7e899f;
+
+  font-size: 12px;
+}
+
+.light-bar {
+  width: 100%;
+
+  height: 8px;
+
+  margin-bottom: 8px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #282b34;
+}
+
+.light-fill {
+  height: 100%;
+
+  background: #ffc14e;
+
+  transition: width 0.5s;
+}
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status-badge {
+  padding: 6px 13px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.status-badge.detected {
+  color: #ff6868;
+
+  background: rgba(255, 70, 70, 0.12);
+}
+
+.status-badge.clear {
+  color: #48dc89;
+
+  background: rgba(45, 210, 125, 0.12);
+}
+
+.status-badge.occupied {
+  color: #ffc62f;
+
+  background: rgba(255, 190, 40, 0.12);
+}
+
+.status-badge.fire-detected {
+  color: #ff5252;
+
+  background: rgba(255, 50, 50, 0.18);
+
+  animation: fireAlert 1s infinite;
+}
+
+.status-badge.fire-safe {
+  color: #48dc89;
+
+  background: rgba(45, 210, 125, 0.12);
+}
+
+@keyframes fireAlert {
+
+  50% {
+    opacity: 0.5;
+  }
+
+}
+
+/* =========================================================
+   SENSOR ICON
+   ========================================================= */
+
+.sensor-icon-box {
+  height: 70px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 15px;
+
+  font-size: 35px;
+}
+
+.motion-active {
+  background: rgba(50, 190, 110, 0.15);
+}
+
+.motion-idle {
+  background: rgba(50, 190, 110, 0.08);
+}
+
+.camera-active {
+  background: rgba(255, 190, 50, 0.15);
+}
+
+.camera-idle {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   CAMERA BUTTON
+   ========================================================= */
+
+.camera-button {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px;
+
+  border: 1px solid
+    rgba(100, 150, 255, 0.3);
+
+  border-radius: 10px;
+
+  background: rgba(70, 120, 255, 0.12);
+
+  color: #82a6ff;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.camera-button:hover {
+  background: rgba(70, 120, 255, 0.25);
+}
+
+/* =========================================================
+   FIRE
+   ========================================================= */
+
+.fire-card {
+  border-color:
+    rgba(255, 80, 80, 0.1);
+}
+
+.fire-status {
+  height: 70px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 15px;
+
+  font-size: 35px;
+}
+
+.fire-normal {
+  background: rgba(40, 190, 110, 0.08);
+}
+
+.fire-active {
+  background: rgba(255, 50, 50, 0.18);
+
+  animation: fireBackground 1s infinite;
+}
+
+.fire-alert {
+  margin-top: 10px;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  color: #ff6a6a;
+
+  background: rgba(255, 50, 50, 0.1);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+@keyframes fireBackground {
+
+  50% {
+    opacity: 0.5;
+  }
+
+}
+
+/* =========================================================
+   CONTROL PANEL
+   ========================================================= */
+
+.control-panel {
+  margin-top: 25px;
+
+  padding: 25px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  background: rgba(20, 20, 28, 0.85);
+}
+
+.control-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.control-header h2 {
+  margin: 0;
+
+  font-size: 22px;
+}
+
+.control-header p {
+  margin: 6px 0 0;
+
+  color: #788297;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   MODE
+   ========================================================= */
+
+.mode-control {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.mode-label {
+  color: #788297;
+
+  font-size: 13px;
+}
+
+.mode-button {
+  padding: 9px 15px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #8d96a9;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.mode-button:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.mode-button.mode-active {
+  background: rgba(70, 120, 255, 0.18);
+
+  border-color:
+    rgba(90, 140, 255, 0.4);
+
+  color: #82a6ff;
+}
+
+/* =========================================================
+   MODE MESSAGE
+   ========================================================= */
+
+.control-mode-status {
+  padding: 12px 15px;
+
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #8993a7;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   DEVICE CONTROLS
+   ========================================================= */
+
+.device-controls {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.device-control-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.device-icon {
+  font-size: 30px;
+}
+
+.device-info {
+  flex: 1;
+}
+
+.device-info h3 {
+  margin: 0 0 6px;
+
+  font-size: 14px;
+}
+
+.device-status {
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.device-status.on {
+  color: #42db85;
+}
+
+.device-status.off {
+  color: #6e778a;
+}
+
+/* =========================================================
+   DEVICE BUTTONS
+   ========================================================= */
+
+.device-buttons {
+  display: flex;
+
+  gap: 5px;
+}
+
+.device-button {
+  padding: 8px 11px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.device-button:disabled {
+  opacity: 0.25;
+
+  cursor: not-allowed;
+}
+
+.on-button {
+  border: 1px solid
+    rgba(50, 210, 125, 0.25);
+
+  background: rgba(50, 210, 125, 0.08);
+
+  color: #49dc88;
+}
+
+.off-button {
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: #858ea1;
+}
+
+.active-button {
+  box-shadow:
+    0 0 12px rgba(70, 220, 130, 0.15);
+}
+
+/* =========================================================
+   FOOTER STATS
+   ========================================================= */
+
+.footer-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.footer-stat {
+  padding: 17px;
+
+  text-align: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 15px;
+
+  background: rgba(22, 22, 29, 0.85);
+}
+
+.stat-label {
+  margin: 0 0 7px;
+
+  color: #69748a;
+
+  text-transform: uppercase;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.stat-value.active {
+  color: #45dc88;
+}
+
+.stat-value.idle {
+  color: #ff6464;
+}
+
+.stat-value.standby {
+  color: #ffc34c;
+}
+
+.safe-text {
+  color: #45dc88;
+}
+
+.fire-text {
+  color: #ff5656;
+}
+
+.text-gradient {
+  color: #82a2ff;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .sensor-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .footer-stats {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 32px;
+  }
+
+  .sensor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .device-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .control-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .footer-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .dashboard {
+    width: 94%;
+  }
+
+  .command-text {
+    font-size: 24px;
+  }
+
+  .footer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .device-control-card {
+    flex-wrap: wrap;
+  }
+
+}
