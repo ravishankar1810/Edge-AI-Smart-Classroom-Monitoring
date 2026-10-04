@@ -76,7 +76,7 @@ through the Arduino's serial communication.
 ┌─────────────────────┐
 │   React Dashboard   │
 └─────────────────────┘
-
+```
 ###Arduino Serial Data
 The Arduino sends the sensor readings to the Python backend through
 serial communication.
