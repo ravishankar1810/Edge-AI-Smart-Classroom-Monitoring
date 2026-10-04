@@ -77,7 +77,7 @@ through the Arduino's serial communication.
 │   React Dashboard   │
 └─────────────────────┘
 ```
-###Arduino Serial Data
+## Arduino Serial Data
 The Arduino sends the sensor readings to the Python backend through
 serial communication.
 Example:
@@ -92,7 +92,7 @@ Where:
 - Light → LDR light level
 - Fire → Flame sensor status
 
-###⚠️ Safety
+## ⚠️ Safety
 For demonstration purposes, use low-voltage loads when testing relay
 control. Do not connect AC mains directly to the Arduino or relay
 module unless the electrical installation is performed by a qualified
